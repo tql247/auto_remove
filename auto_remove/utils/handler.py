@@ -1,4 +1,3 @@
-from auto_remove.access.access import mark_skipping
 from auto_remove.utils.helper import moving_video
 import pytz
 from datetime import datetime, timedelta
