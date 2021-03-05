@@ -11,8 +11,8 @@ def get_video_file_name(connection, start_date, end_date):
     # query db
     cursor = connection.cursor()
     query = f"""
-                select file_uri, start_point 
-                from video vi 
+                select file_name, start_point 
+                from video_information vi 
                 where true
                 and vi.start_point::date between date '{start_date}' and date '{end_date}'
                 and not (vi.start_point::time between time '{TIME_RANGE_PROTECT_START}' and '{TIME_RANGE_PROTECT_END}')
@@ -69,15 +69,19 @@ def mark_skipping(connection, start_date, end_date):
     # query db
     cursor = connection.cursor()
     query = f"""
-                update video
-                set deleted_at = timezone('utc', now())
-                where true 
-                and start_point ::date between date '{start_date}' and date '{end_date}'
-                and not (
-                    start_point::time between time '{TIME_RANGE_PROTECT_START}' 
-                    and '{TIME_RANGE_PROTECT_END}'
+                update video_state
+                set state_video_state = 5
+                where id_video in (
+                    select id_video
+                    from video_information vi 
+                    where true
+                    and vi.start_point::date between date '{start_date}' and date '{end_date}'
+                    and not (
+                        vi.start_point::time between time '{TIME_RANGE_PROTECT_START}' and '{TIME_RANGE_PROTECT_END}'
+                    )
+                    order by vi.start_point asc 
                 )
-                and state = 0
+                and state_video_state = 0
             """
 
     try:
