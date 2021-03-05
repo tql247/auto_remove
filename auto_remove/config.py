@@ -1,13 +1,13 @@
-RECYCLE_BIN_FOLDER = "//14.241.228.138/storage/V-TEST/recycle_bin"
+RECYCLE_BIN_FOLDER = "//14.241.228.138/storage/V-1/recycle_bin"
 
 
-PENDING_FOLDER = "//14.241.228.138/storage/V-TEST/pending"
+PENDING_FOLDER = "//14.241.228.138/storage/V-1/pending"
 TIME_RANGE_PROTECT_START = '08:50:59'
 TIME_RANGE_PROTECT_END = '21:10:59'
 PERIOD = "daily"
 DB_SERVER = "ai-factory.yedda.tech"
 DB_PORT = "5432"
-DB_NAME = "counting_data"
+DB_NAME = "people_counting_factory"
 USER = "cleaner"
 PASSWORD = "OmACCgpleLZqswc3E0ScxguxBGEYVTQW"
 
