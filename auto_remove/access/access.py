@@ -16,7 +16,7 @@ def get_video_file_name(connection, start_date, end_date):
                 where true
                 and vi.start_point::date between date '{start_date}' and date '{end_date}'
                 and not (vi.start_point::time between time '{TIME_RANGE_PROTECT_START}' and '{TIME_RANGE_PROTECT_END}')
-                order by vi.start_point desc
+                order by vi.start_point asc
             """
     cursor.execute(query)
     record = cursor.fetchall()
@@ -47,7 +47,7 @@ def get_video_by_location_datetime(connection, start_date=None, end_date=None):
                 )
                 and vi.start_point::date between date '{SPECIFIC_DATE_INIT}' and date '{SPECIFIC_DATE_INIT}'
                 and not (vi.start_point::time between time '{SPECIFIC_TIME_INIT_START}' and '{SPECIFIC_TIME_INIT_END}')
-                order by vi.start_point desc
+                order by vi.start_point asc
             """
     cursor.execute(query)
     record = cursor.fetchall()

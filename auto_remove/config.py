@@ -1,7 +1,7 @@
-RECYCLE_BIN_FOLDER = "//14.241.228.138/storage/V-1/recycle_bin"
+RECYCLE_BIN_FOLDER = "//14.241.228.138/storage/V1/recycle_bin"
 
 
-PENDING_FOLDER = "//14.241.228.138/storage/V-1/pending"
+PENDING_FOLDER = "//14.241.228.138/storage/V1/pending"
 TIME_RANGE_PROTECT_START = '08:50:59'
 TIME_RANGE_PROTECT_END = '21:10:59'
 PERIOD = "daily"
