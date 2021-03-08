@@ -20,10 +20,11 @@ def file_transferring(file_list, from_dir, to_dir):
 
     num_file = len(file_list)
     for idx, file_name in enumerate(file_list):
-        print(f'\r {idx}/{num_file}: {file_name} is tranferring')
+        print(f'\r {idx}/{num_file}: {file_name}')
         if not os.path.exists(os.path.join(from_dir, file_name)):
-            print(f'\r {file_name} not exist')
+            print(' not exist')
         else:
+            print(' is tranferring')
             file_path = os.path.join(from_dir, file_name)
             to_path = os.path.join(to_dir, file_name)
             shutil.move(file_path, to_path)
