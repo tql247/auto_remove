@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 def video_remove(connection):
     today = datetime.now(pytz.timezone('Asia/Ho_Chi_Minh'))
-    start_date = (today - timedelta(days=1)).strftime('%Y-%m-%d')
+    start_date = (today - timedelta(days=2)).strftime('%Y-%m-%d')
     end_date = (today + timedelta(days=1)).strftime('%Y-%m-%d')
     moving_video(connection, start_date, end_date)
     return True

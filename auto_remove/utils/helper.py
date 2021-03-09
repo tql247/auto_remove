@@ -36,8 +36,8 @@ def get_video_by_specific(connection):
 
 
 def moving_video(connection, start_date, end_date):
-    # list_video = get_video_file_name(connection, start_date, end_date)
-    # file_transferring(list_video, PENDING_FOLDER, RECYCLE_BIN_FOLDER)
+    list_video = get_video_file_name(connection, start_date, end_date)
+    file_transferring(list_video, PENDING_FOLDER, RECYCLE_BIN_FOLDER)
     mark_skipping(connection, start_date, end_date)
     # list_video = get_video_by_specific(connection)
     # file_transferring(list_video, PENDING_FOLDER, RECYCLE_BIN_FOLDER)
