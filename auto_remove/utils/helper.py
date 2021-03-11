@@ -20,7 +20,7 @@ def file_transferring(file_list, from_dir, to_dir):
 
     num_file = len(file_list)
     for idx, file_name in enumerate(file_list):
-        print(f'\r {idx}/{num_file}: {file_name}')
+        print(f'\r {idx}/{num_file}: {file_name}', end="")
         if not os.path.exists(os.path.join(from_dir, file_name)):
             print(' not exist')
         else:
